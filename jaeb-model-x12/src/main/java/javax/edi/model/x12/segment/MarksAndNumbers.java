@@ -7,11 +7,11 @@ import javax.validation.constraints.Size;
 @EDISegment(tag="MAN")
 public class MarksAndNumbers {
 
-	@Size(min=1, max=2)
+	//@Size(min=1, max=2)
 	@EDIElement(fieldName="MAN01", dataElement="88")
 	private String marksAndNumbersQualifier;
 	
-	@Size(min=1, max=48)
+	//@Size(min=1, max=48)
 	@EDIElement(fieldName="MAN02", dataElement="87")
 	private String marksAndNumbers;
 

@@ -11,19 +11,15 @@ public class Detail {
 	
 	@EDICollectionType(ShipmentLevelGroup.class)
 	private Collection<ShipmentLevelGroup> shipmentLevelGroups;
-
 	
 	@EDICollectionType(PackageCartonGroup.class)
 	private Collection<PackageCartonGroup> packageCartonGroup;
+	
+	@NotNull
+	@EDICollectionType(ItemLevelInformationGroup.class)
+	private Collection<ItemLevelInformationGroup> itemLevelInformationGroup; 
 
-	public Collection<PackageCartonGroup> getPackageCartonGroup() {
-		return packageCartonGroup;
-	}
-
-	public void setPackageCartonGroup(
-			Collection<PackageCartonGroup> packageCartonGroup) {
-		this.packageCartonGroup = packageCartonGroup;
-	}
+	
 
 	public Collection<ShipmentLevelGroup> getShipmentLevelGroups() {
 		return shipmentLevelGroups;
@@ -33,10 +29,15 @@ public class Detail {
 			Collection<ShipmentLevelGroup> shipmentLevelGroups) {
 		this.shipmentLevelGroups = shipmentLevelGroups;
 	}
+	
+	public Collection<PackageCartonGroup> getPackageCartonGroup() {
+		return packageCartonGroup;
+	}
 
-	@NotNull
-	@EDICollectionType(ItemLevelInformationGroup.class)
-	private Collection<ItemLevelInformationGroup> itemLevelInformationGroup; 
+	public void setPackageCartonGroup(
+			Collection<PackageCartonGroup> packageCartonGroup) {
+		this.packageCartonGroup = packageCartonGroup;
+	}
 
 	public Collection<ItemLevelInformationGroup> getItemLevelInformationGroup() {
 		return itemLevelInformationGroup;
@@ -46,4 +47,7 @@ public class Detail {
 			Collection<ItemLevelInformationGroup> itemLevelInformationGroup) {
 		this.itemLevelInformationGroup = itemLevelInformationGroup;
 	}
+
+
+
 }

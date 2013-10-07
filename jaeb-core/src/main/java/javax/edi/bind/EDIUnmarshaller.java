@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
@@ -147,8 +148,14 @@ public class EDIUnmarshaller {
 				// get the first element of the line.
 				StrTokenizer nextLineTokenizer = new StrTokenizer(nextLine, ediMessage.elementDelimiter());
 
+			
 				if (StringUtils.equals(segmentTag, nextLineTokenizer.nextToken())) {
-					LOG.debug("Might be a repeat..");
+					if( !isSegmentEqual(line, nextLine, Character.toString( ediMessage.elementDelimiter() )) ) {
+						LOG.info("Reaching new collection");
+						lookAhead.add(nextLine);
+						break;
+					}
+					LOG.info("Might be a repeat..");
 					LOG.debug("Next line: " + line);
 					lookAhead.add(nextLine);
 				} else {
@@ -437,6 +444,23 @@ public class EDIUnmarshaller {
 		public String getLine() {
 			return line;
 		}
+	}
+	
+	
+	protected static boolean isSegmentEqual(String line1, String line2, String delimiter) {
+		String regex = delimiter;
+		if(delimiter.equals("*")) {
+			regex = "\\*";
+		}
+		String[] nextLineList = line2.split( regex );
+		String[] lineList = line1.split( regex );
+		if( lineList[0].equals(nextLineList[0]) && nextLineList[0].equals("HL") && !lineList[3].equals( nextLineList[3] )) {
+			return false;
+		}
+		if(lineList[0].equals(nextLineList[0])) {
+			return true;
+		}
+		return false;
 	}
 
 }

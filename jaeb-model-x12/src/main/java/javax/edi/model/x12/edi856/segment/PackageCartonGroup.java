@@ -11,7 +11,9 @@ public class PackageCartonGroup {
 	@NotNull
 	private HierarchicalLevel packageCartonHeader;
 	private MarksAndNumbers cartonSSCCCode;
+	private MarksAndNumbers cartonA;
 	private MarksAndNumbers carrierTrackingNumber;
+
 
 	public HierarchicalLevel getPackageCartonHeader() {
 		return packageCartonHeader;
@@ -30,6 +32,12 @@ public class PackageCartonGroup {
 	}
 	public void setCarrierTrackingNumber(MarksAndNumbers carrierTrackingNumber) {
 		this.carrierTrackingNumber = carrierTrackingNumber;
+	}
+	public MarksAndNumbers getCartonA() {
+		return cartonA;
+	}
+	public void setCartonA(MarksAndNumbers cartonA) {
+		this.cartonA = cartonA;
 	}
 	
 	

@@ -1,5 +1,6 @@
 package javax.edi.model.x12.segment;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import javax.edi.bind.annotations.EDIElement;
@@ -38,7 +39,7 @@ public class QuantityWeightCarrierDetails {
 	
 	@NotNull
 	@EDIElement(fieldName="TD107", dataElement="81")
-	private BigInteger weight;
+	private BigDecimal weight;
 	
 	@NotNull
 	@EDIElement(fieldName="TD108", dataElement="355")
@@ -93,11 +94,11 @@ public class QuantityWeightCarrierDetails {
 		this.weightQualifier = weightQualifier;
 	}
 
-	public BigInteger getWeight() {
+	public BigDecimal getWeight() {
 		return weight;
 	}
 
-	public void setWeight(BigInteger weight) {
+	public void setWeight(BigDecimal weight) {
 		this.weight = weight;
 	}
 

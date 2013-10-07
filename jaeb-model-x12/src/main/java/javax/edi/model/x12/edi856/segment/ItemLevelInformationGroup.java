@@ -3,6 +3,7 @@ package javax.edi.model.x12.edi856.segment;
 import javax.edi.bind.annotations.EDISegmentGroup;
 import javax.edi.model.x12.segment.HierarchicalLevel;
 import javax.edi.model.x12.segment.ItemIdentification;
+import javax.edi.model.x12.segment.ProductItemDescription;
 import javax.edi.model.x12.segment.ShipmentItemDetail;
 
 @EDISegmentGroup
@@ -11,6 +12,7 @@ public class ItemLevelInformationGroup {
 	private HierarchicalLevel itemLevel;
 	private ItemIdentification itemIdentification;
 	private ShipmentItemDetail shipmentItemDetail;
+	private ProductItemDescription productItemDescription;
 	
 	public HierarchicalLevel getItemLevel() {
 		return itemLevel;
@@ -31,6 +33,14 @@ public class ItemLevelInformationGroup {
 	}
 	public void setShipmentItemDetail(ShipmentItemDetail shipmentItemDetail) {
 		this.shipmentItemDetail = shipmentItemDetail;
+	}
+
+	public ProductItemDescription getProductItemDescription() {
+		return productItemDescription;
+	}
+
+	public void setProductItemDescription(ProductItemDescription productItemDescription) {
+		this.productItemDescription = productItemDescription;
 	}
 	
 	

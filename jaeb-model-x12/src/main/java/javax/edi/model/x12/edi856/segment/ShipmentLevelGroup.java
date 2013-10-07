@@ -6,6 +6,7 @@ import javax.edi.bind.annotations.EDICollectionType;
 import javax.edi.bind.annotations.EDISegmentGroup;
 import javax.edi.model.x12.segment.AdditionalNameInformation;
 import javax.edi.model.x12.segment.AddressInformation;
+import javax.edi.model.x12.segment.Currency;
 import javax.edi.model.x12.segment.DateTimeReference;
 import javax.edi.model.x12.segment.GeographicLocation;
 import javax.edi.model.x12.segment.HierarchicalLevel;
@@ -25,12 +26,14 @@ public class ShipmentLevelGroup {
 	private DateTimeReference shipmentDateTime;
 	
 	private Name shipFromNameInformation;
+	private AddressInformation shipFromAddress;
 	private GeographicLocation shipmentFromLocation;
 	
 	private Name shipToNameInformation;
-	private AdditionalNameInformation shipToAdditionalName;
 	private AddressInformation shipToAddress;
 	private GeographicLocation shipToCityStateZip;
+	
+	private Currency currency;
 	
 	@EDICollectionType(OrderInformationGroup.class)
 	private Collection<OrderInformationGroup> orderInformationGroup;
@@ -45,14 +48,14 @@ public class ShipmentLevelGroup {
 		this.orderInformationGroup = orderInformationGroup;
 	}
 
-	public AdditionalNameInformation getShipToAdditionalName() {
-		return shipToAdditionalName;
-	}
-	
-	public void setShipToAdditionalName(
-			AdditionalNameInformation shipToAdditionalName) {
-		this.shipToAdditionalName = shipToAdditionalName;
-	}
+//	public AdditionalNameInformation getShipToAdditionalName() {
+//		return shipToAdditionalName;
+//	}
+//	
+//	public void setShipToAdditionalName(
+//			AdditionalNameInformation shipToAdditionalName) {
+//		this.shipToAdditionalName = shipToAdditionalName;
+//	}
 	
 	
 	public HierarchicalLevel getShipmentInformationLevel() {
@@ -125,6 +128,22 @@ public class ShipmentLevelGroup {
 	}
 	public void setShipToCityStateZip(GeographicLocation shipToCityStateZip) {
 		this.shipToCityStateZip = shipToCityStateZip;
+	}
+
+	public AddressInformation getShipFromAddress() {
+		return shipFromAddress;
+	}
+
+	public void setShipFromAddress(AddressInformation shipFromAddress) {
+		this.shipFromAddress = shipFromAddress;
+	}
+
+	public Currency getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(Currency currency) {
+		this.currency = currency;
 	}
 	
 	

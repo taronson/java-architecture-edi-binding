@@ -151,11 +151,11 @@ public class EDIUnmarshaller {
 			
 				if (StringUtils.equals(segmentTag, nextLineTokenizer.nextToken())) {
 					if( !isSegmentEqual(line, nextLine, Character.toString( ediMessage.elementDelimiter() )) ) {
-						LOG.info("Reaching new collection");
+						LOG.debug("Reaching new collection");
 						lookAhead.add(nextLine);
 						break;
 					}
-					LOG.info("Might be a repeat..");
+					LOG.debug("Might be a repeat..");
 					LOG.debug("Next line: " + line);
 					lookAhead.add(nextLine);
 				} else {

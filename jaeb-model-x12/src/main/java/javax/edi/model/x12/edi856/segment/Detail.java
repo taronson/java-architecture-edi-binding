@@ -4,20 +4,12 @@ import java.util.Collection;
 
 import javax.edi.bind.annotations.EDICollectionType;
 import javax.edi.bind.annotations.EDISegmentGroup;
-import javax.validation.constraints.NotNull;
 
 @EDISegmentGroup
 public class Detail {
 	
 	@EDICollectionType(ShipmentLevelGroup.class)
-	private Collection<ShipmentLevelGroup> shipmentLevelGroups;
-	
-	@EDICollectionType(PackageCartonGroup.class)
-	private Collection<PackageCartonGroup> packageCartonGroup;
-	
-	@NotNull
-	@EDICollectionType(ItemLevelInformationGroup.class)
-	private Collection<ItemLevelInformationGroup> itemLevelInformationGroup; 
+	private Collection<ShipmentLevelGroup> shipmentLevelGroups; 
 
 	
 
@@ -28,24 +20,6 @@ public class Detail {
 	public void setShipmentLevelGroups(
 			Collection<ShipmentLevelGroup> shipmentLevelGroups) {
 		this.shipmentLevelGroups = shipmentLevelGroups;
-	}
-	
-	public Collection<PackageCartonGroup> getPackageCartonGroup() {
-		return packageCartonGroup;
-	}
-
-	public void setPackageCartonGroup(
-			Collection<PackageCartonGroup> packageCartonGroup) {
-		this.packageCartonGroup = packageCartonGroup;
-	}
-
-	public Collection<ItemLevelInformationGroup> getItemLevelInformationGroup() {
-		return itemLevelInformationGroup;
-	}
-	
-	public void setItemLevelInformationGroup(
-			Collection<ItemLevelInformationGroup> itemLevelInformationGroup) {
-		this.itemLevelInformationGroup = itemLevelInformationGroup;
 	}
 
 

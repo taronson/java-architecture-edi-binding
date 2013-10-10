@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import javax.edi.bind.annotations.EDICollectionType;
 import javax.edi.bind.annotations.EDISegmentGroup;
-import javax.edi.model.x12.segment.AdditionalNameInformation;
 import javax.edi.model.x12.segment.AddressInformation;
 import javax.edi.model.x12.segment.Currency;
 import javax.edi.model.x12.segment.DateTimeReference;
@@ -47,16 +46,6 @@ public class ShipmentLevelGroup {
 			Collection<OrderInformationGroup> orderInformationGroup) {
 		this.orderInformationGroup = orderInformationGroup;
 	}
-
-//	public AdditionalNameInformation getShipToAdditionalName() {
-//		return shipToAdditionalName;
-//	}
-//	
-//	public void setShipToAdditionalName(
-//			AdditionalNameInformation shipToAdditionalName) {
-//		this.shipToAdditionalName = shipToAdditionalName;
-//	}
-	
 	
 	public HierarchicalLevel getShipmentInformationLevel() {
 		return shipmentInformationLevel;

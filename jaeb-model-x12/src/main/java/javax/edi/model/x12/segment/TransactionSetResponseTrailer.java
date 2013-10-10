@@ -5,7 +5,7 @@ import javax.edi.bind.annotations.EDISegment;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@EDISegment(tag="AK4")
+@EDISegment(tag="AK5")
 public class TransactionSetResponseTrailer {
 
 	

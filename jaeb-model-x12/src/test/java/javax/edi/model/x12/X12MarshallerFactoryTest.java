@@ -92,7 +92,7 @@ public class X12MarshallerFactoryTest {
 
 	@Test
 	public void testReadEDI856() throws Exception {
-		InputStreamReader isr = new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("edi856.txt"));
+		InputStreamReader isr = new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("edi856-ussco-prod-1.txt"));
 		AdvanceShipmentNotice edi = EDIUnmarshaller.unmarshal(AdvanceShipmentNotice.class, isr);
 		
 		LOG.info("size: {}",edi.getBody().size());

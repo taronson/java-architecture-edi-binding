@@ -12,7 +12,6 @@ import javax.edi.model.x12.edi832.PriceSalesCatalog;
 import javax.edi.model.x12.edi846.InventoryInquery;
 import javax.edi.model.x12.edi855.POAcknowledgement;
 import javax.edi.model.x12.edi856.AdvanceShipmentNotice;
-import javax.edi.model.x12.edi856.segment.AdvanceShipmentNoticeBody;
 
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.junit.Ignore;
@@ -42,7 +41,7 @@ public class X12MarshallerFactoryTest {
 		StringWriter sw = new StringWriter();
 		EDIMarshaller.marshal(edi, sw);
 		
-		LOG.info("Marshalled: "+sw.toString());
+		LOG.debug("Marshalled: "+sw.toString());
 	}
 
 	@Ignore
@@ -60,7 +59,7 @@ public class X12MarshallerFactoryTest {
 		LOG.debug("Marshalled: "+sw.toString());
 	}
 	
-	@Ignore
+	
 	@Test
 	public void testReadEDI846() throws Exception {
 		InputStreamReader isr = new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("x8464010.txt"));
@@ -79,32 +78,28 @@ public class X12MarshallerFactoryTest {
 	public void testReadEDI855() throws Exception {
 		InputStreamReader isr = new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("x8554010.txt"));
 		POAcknowledgement edi= EDIUnmarshaller.unmarshal(POAcknowledgement.class, isr);
-
-		LOG.info(ReflectionToStringBuilder.toString(edi, new ReflectiveToStringStyle()));
-
-		StringWriter sw = new StringWriter();
-		EDIMarshaller.marshal(edi, sw);
 		
-		LOG.info("Marshalled: "+sw.toString());
-	}
-	
-
-
-	@Test
-	public void testReadEDI856() throws Exception {
-		InputStreamReader isr = new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("edi856-ussco-prod-1.txt"));
-		AdvanceShipmentNotice edi = EDIUnmarshaller.unmarshal(AdvanceShipmentNotice.class, isr);
-		
-		LOG.info("size: {}",edi.getBody().size());
-		
-		for(AdvanceShipmentNoticeBody body : edi.getBody()) {
-			LOG.info("body id: {}",body.getHeader().getTransactionSetHeader().getTransactionSetControlNumber());
-		}
 		LOG.debug(ReflectionToStringBuilder.toString(edi, new ReflectiveToStringStyle()));
 
 		StringWriter sw = new StringWriter();
 		EDIMarshaller.marshal(edi, sw);
 		
-		LOG.info("Marshalled: "+sw.toString());
+		LOG.debug("Marshalled: "+sw.toString());
 	}
+	
+
+
+	@Ignore
+	@Test
+	public void testReadEDI856() throws Exception {
+		InputStreamReader isr = new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("x8564010.txt"));
+		AdvanceShipmentNotice edi = EDIUnmarshaller.unmarshal(AdvanceShipmentNotice.class, isr);
+		
+		LOG.debug(ReflectionToStringBuilder.toString(edi, new ReflectiveToStringStyle()));
+
+		StringWriter sw = new StringWriter();
+		EDIMarshaller.marshal(edi, sw);
+		
+		LOG.debug("Marshalled: "+sw.toString());
+ 	}
 }

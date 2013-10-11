@@ -25,15 +25,15 @@ public class TestEDIUnmarshaller extends EDITestBase {
 		LOG.debug(exampleMessage.toString());
 		LOG.debug(message.toString());
 		
-//		StringWriter resultMain = new StringWriter();
-//		EDIMarshaller.marshal(exampleMessage, resultMain);
-//		
-//		StringWriter resultNew = new StringWriter();
-//		EDIMarshaller.marshal(exampleMessage, resultNew);
-//		
-//		LOG.debug(resultMain.toString());
-//		LOG.debug(resultNew.toString());
-//		
-//		Assert.assertTrue(resultMain.toString().equals(resultNew.toString()));
+		StringWriter resultMain = new StringWriter();
+		EDIMarshaller.marshal(exampleMessage, resultMain);
+		
+		StringWriter resultNew = new StringWriter();
+		EDIMarshaller.marshal(exampleMessage, resultNew);
+		
+		LOG.debug(resultMain.toString());
+		LOG.debug(resultNew.toString());
+		
+		Assert.assertTrue(resultMain.toString().equals(resultNew.toString()));
 	}
 }

@@ -1,8 +1,12 @@
 package javax.edi.bind;
 
+import java.io.BufferedWriter;
+import java.io.StringWriter;
 import java.io.Writer;
 import java.lang.reflect.Field;
 import java.util.Collection;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.edi.bind.annotations.EDICollectionType;
 import javax.edi.bind.annotations.EDIComponent;
@@ -157,6 +161,7 @@ public class EDIMarshaller {
     }
     
     protected static <T> void writeSegment(EDIMessage message, T obj, Writer writer) throws Exception {
+    	StringWriter tempSw = new StringWriter();
     	if(obj == null) {
     		return;
     	}
@@ -169,7 +174,7 @@ public class EDIMarshaller {
         
         //add the segment code.
         EDISegment segment = clazz.getAnnotation(EDISegment.class);
-        writer.append(segment.tag()+message.elementDelimiter());
+        tempSw.append(segment.tag()+message.elementDelimiter());
         
         //now, loop through all segments.
         for(int i=0, j=clazz.getDeclaredFields().length; i<j; i++) {
@@ -179,12 +184,20 @@ public class EDIMarshaller {
         	Class<?> fieldType = field.getType();
         	
         	if(i > 0) {
-        		writer.append(message.elementDelimiter());
+        		tempSw.append(message.elementDelimiter());
         	}
         	
-        	writeField(message, field, obj, writer);
+        	writeField(message, field, obj, tempSw);
         }  
         
+        String line = tempSw.toString();
+
+        Pattern pattern = Pattern.compile("(\\*+$)");
+        Matcher matcher = pattern.matcher(line);
+        if(matcher.find()) {
+        	line = line.substring(0, matcher.start(1));
+        }
+        writer.append(line);
         writer.append(message.segmentDelimiter());
     }
     

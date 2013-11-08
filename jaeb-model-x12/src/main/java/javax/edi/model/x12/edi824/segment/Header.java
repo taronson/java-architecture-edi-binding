@@ -4,13 +4,10 @@ import java.util.Collection;
 
 import javax.edi.bind.annotations.EDICollectionType;
 import javax.edi.bind.annotations.EDISegmentGroup;
-import javax.edi.model.x12.edi816.segment.OrgRelationshipsBeginningSegment;
-import javax.edi.model.x12.segment.DateTimeReference;
-import javax.edi.model.x12.segment.FunctionalGroupHeader;
+import javax.edi.model.x12.segment.GroupEnvelopeHeader;
 import javax.edi.model.x12.segment.InterchangeEnvelopeHeader;
 import javax.edi.model.x12.segment.Name;
-import javax.edi.model.x12.segment.ReferenceIdentification;
-import javax.edi.model.x12.segment.ReferenceIdentificationInvalidTxn;
+import javax.edi.model.x12.segment.ReferenceNumber;
 import javax.edi.model.x12.segment.TransactionSetHeader;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -25,7 +22,7 @@ import javax.validation.constraints.Size;
 		private TransactionSetHeader transactionSetHeader;
 		
 		@NotNull
-		private FunctionalGroupHeader functionalGroupHeader;
+		private GroupEnvelopeHeader functionalGroupHeader;
 		
 		@NotNull
 		private ApplicationAdviceBeginningSegment appAdviceBeginSegment;
@@ -35,8 +32,8 @@ import javax.validation.constraints.Size;
 		
 		@NotNull
 		@Size(max = 12)
-		@EDICollectionType(ReferenceIdentificationInvalidTxn.class)
-		private Collection<ReferenceIdentificationInvalidTxn> refIdentificationInvalidTxns;
+		@EDICollectionType(ReferenceNumber.class)
+		private Collection<ReferenceNumber> refIdentificationInvalidTxns;
 
 		public InterchangeEnvelopeHeader getInterchangeEnvelopeHeader() {
 			return interchangeEnvelopeHeader;
@@ -55,11 +52,11 @@ import javax.validation.constraints.Size;
 			this.transactionSetHeader = transactionSetHeader;
 		}
 
-		public FunctionalGroupHeader getFunctionalGroupHeader() {
+		public GroupEnvelopeHeader getFunctionalGroupHeader() {
 			return functionalGroupHeader;
 		}
 
-		public void setFunctionalGroupHeader(FunctionalGroupHeader functionalGroupHeader) {
+		public void setFunctionalGroupHeader(GroupEnvelopeHeader functionalGroupHeader) {
 			this.functionalGroupHeader = functionalGroupHeader;
 		}
 
@@ -80,12 +77,12 @@ import javax.validation.constraints.Size;
 			this.name = name;
 		}
 
-		public Collection<ReferenceIdentificationInvalidTxn> getRefIdentificationInvalidTxn() {
+		public Collection<ReferenceNumber> getRefIdentificationInvalidTxn() {
 			return refIdentificationInvalidTxns;
 		}
 
 		public void setRefIdentificationInvalidTxn(
-				Collection<ReferenceIdentificationInvalidTxn> refIdentificationInvalidTxns) {
+				Collection<ReferenceNumber> refIdentificationInvalidTxns) {
 			this.refIdentificationInvalidTxns = refIdentificationInvalidTxns;
 		}
 }

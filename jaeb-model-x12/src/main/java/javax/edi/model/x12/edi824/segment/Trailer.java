@@ -1,12 +1,10 @@
 package javax.edi.model.x12.edi824.segment;
 
-import javax.edi.bind.annotations.EDIElement;
 import javax.edi.bind.annotations.EDISegmentGroup;
-import javax.edi.model.x12.segment.FunctionalGroupTrailer;
+import javax.edi.model.x12.segment.GroupEnvelopeTrailer;
 import javax.edi.model.x12.segment.InterchangeEnvelopeTrailer;
 import javax.edi.model.x12.segment.TransactionSetTrailer;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @EDISegmentGroup
 public class Trailer {
@@ -15,7 +13,7 @@ public class Trailer {
 	private TransactionSetTrailer transactionSetTrailer;
 	
 	@NotNull
-	private FunctionalGroupTrailer functionalGroupTrailer;
+	private GroupEnvelopeTrailer functionalGroupTrailer;
 	
 	@NotNull
 	private InterchangeEnvelopeTrailer interChangeControlTrailer;
@@ -28,12 +26,12 @@ public class Trailer {
 		this.transactionSetTrailer = transactionSetTrailer;
 	}
 
-	public FunctionalGroupTrailer getFunctionalGroupTrailer() {
+	public GroupEnvelopeTrailer getFunctionalGroupTrailer() {
 		return functionalGroupTrailer;
 	}
 
 	public void setFunctionalGroupTrailer(
-			FunctionalGroupTrailer functionalGroupTrailer) {
+			GroupEnvelopeTrailer functionalGroupTrailer) {
 		this.functionalGroupTrailer = functionalGroupTrailer;
 	}
 

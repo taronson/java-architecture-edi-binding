@@ -1,10 +1,12 @@
 package javax.edi.model.x12.edi824.segment;
 
+import javax.edi.bind.annotations.EDISegmentGroup;
 import javax.edi.model.x12.edi824.segment.Detail;
 import javax.edi.model.x12.edi824.segment.Header;
 import javax.edi.model.x12.edi824.segment.Trailer;
 import javax.validation.constraints.NotNull;
 
+@EDISegmentGroup
 public class ApplicationAdviceBody {
 	
 	@NotNull

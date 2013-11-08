@@ -12,9 +12,9 @@ public class OrgRelationshipsBody {
 		@NotNull
 		private Detail detail;
 		
-		@NotNull
-		private Trailer trailer;
-
+		/*@NotNull
+		private Trailer trailer; 
+*/
 		public Header getHeader() {
 			return header;
 		}
@@ -30,18 +30,18 @@ public class OrgRelationshipsBody {
 		public void setDetail(Detail detail) {
 			this.detail = detail;
 		}
-
-		public Trailer getTrailer() {
+		
+		/*public Trailer getTrailer() {
 			return trailer;
 		}
 
 		public void setTrailer(Trailer trailer) {
 			this.trailer = trailer;
-		}
-
+		}*/
+		
 		@Override
 		public String toString() {
 			return "OrgRelationsBody [header=" + header + ", detail=" + detail
-					+ ", trailer=" + trailer + "]";
+					+ ", trailer= (in detail)" ;
 		}
 }

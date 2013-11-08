@@ -11,7 +11,6 @@ import javax.edi.model.x12.segment.GeographicLocation;
 import javax.edi.model.x12.segment.Name;
 import javax.edi.model.x12.segment.PersonContact;
 import javax.edi.model.x12.segment.ReferenceNumber;
-import javax.edi.model.x12.segment.TermsOfSale;
 import javax.edi.model.x12.segment.TransactionSetHeader;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -29,25 +28,25 @@ public class Header {
 	private Name name;  // Party Ident.
 	
 	@EDICollectionType(AddressInformation.class)
-	@Size(max = 2)
+	@Size(min = 0, max = 2)
 	private Collection<AddressInformation> addrInfo;  // Party Location
 	
 	private GeographicLocation geoLocation;
 	
 	@EDICollectionType(PersonContact.class)
-	@Size(max = 3)
+	@Size(min = 0, max = 3)
 	private Collection<PersonContact> contact;  // Admin. Comm. Contact
 	
 	@EDICollectionType(DateTimeReference.class)
-	@Size(max = 10)
+	@Size(min = 0, max = 10)
 	private Collection<DateTimeReference> date;
 	
 	@EDICollectionType(AdditionalNameInformation.class)
-	@Size(max = 2)
+	@Size(min = 0, max = 2)
 	private Collection<AdditionalNameInformation >addlName;
 	
 	@EDICollectionType(ReferenceNumber.class)
-	@Size(max = 12)
+	@Size(min = 1, max = 12)
 	private Collection<ReferenceNumber> refNum;
 
 	public TransactionSetHeader getTransactionSetHeader() {

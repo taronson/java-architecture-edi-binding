@@ -30,6 +30,38 @@ public class ApplicationAdviceBeginningSegment {
 	@EDIElement(fieldName="BH03",dataElement="337")
 	@NotNull
 	@Size(min = 4, max = 8)
-	private String time; 
+	private String time;
+
+	public String getTxnSetPurposeCode() {
+		return txnSetPurposeCode;
+	}
+
+	public void setTxnSetPurposeCode(String txnSetPurposeCode) {
+		this.txnSetPurposeCode = txnSetPurposeCode;
+	}
+
+	public String getReferenceIdentCode() {
+		return referenceIdentCode;
+	}
+
+	public void setReferenceIdentCode(String referenceIdentCode) {
+		this.referenceIdentCode = referenceIdentCode;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	} 
 
 }

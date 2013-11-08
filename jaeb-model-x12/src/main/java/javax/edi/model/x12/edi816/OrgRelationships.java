@@ -47,7 +47,7 @@ public class OrgRelationships {
 		public void setGroupEnvelopeHeader(GroupEnvelopeHeader groupEnvelopeHeader) {
 			this.groupEnvelopeHeader = groupEnvelopeHeader;
 		}
-
+   
 		public Collection<OrgRelationshipsBody> getBody() {
 			return body;
 		}
@@ -56,6 +56,12 @@ public class OrgRelationships {
 			this.body = body;
 		}
 
+		@Override
+		public String toString() {
+			return "OrgRelationships [body=" + body + "]";
+		}
+
+		
 		public GroupEnvelopeTrailer getGroupEnvelopeTrailer() {
 			return groupEnvelopeTrailer;
 		}
@@ -71,5 +77,9 @@ public class OrgRelationships {
 		public void setEnvelopeTrailer(InterchangeEnvelopeTrailer envelopeTrailer) {
 			this.envelopeTrailer = envelopeTrailer;
 		}
+
+		
+        
+		
 
 }

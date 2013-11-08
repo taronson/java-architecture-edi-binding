@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 @EDISegment(tag="BHT")
 public class OrgRelationshipsBeginningSegment {
 	
-	@EDIElement(fieldName="BH01",dataElement="1005")
+	@EDIElement(fieldName="BHT01",dataElement="1005")
 	@NotNull
 	@Size(min = 4, max = 4)
 	private String hierStructureCode; 
@@ -44,5 +44,53 @@ public class OrgRelationshipsBeginningSegment {
 				+ transactionSetPurposeCode + ", refIdentification="
 				+ refIdentification + ", date=" + date + ", time=" + time
 				+ ", transactionTypeCode=" + transactionTypeCode + "]";
+	}
+
+	public String getHierStructureCode() {
+		return hierStructureCode;
+	}
+
+	public void setHierStructureCode(String hierStructureCode) {
+		this.hierStructureCode = hierStructureCode;
+	}
+
+	public String getTransactionSetPurposeCode() {
+		return transactionSetPurposeCode;
+	}
+
+	public void setTransactionSetPurposeCode(String transactionSetPurposeCode) {
+		this.transactionSetPurposeCode = transactionSetPurposeCode;
+	}
+
+	public String getRefIdentification() {
+		return refIdentification;
+	}
+
+	public void setRefIdentification(String refIdentification) {
+		this.refIdentification = refIdentification;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getTransactionTypeCode() {
+		return transactionTypeCode;
+	}
+
+	public void setTransactionTypeCode(String transactionTypeCode) {
+		this.transactionTypeCode = transactionTypeCode;
 	} 
 }

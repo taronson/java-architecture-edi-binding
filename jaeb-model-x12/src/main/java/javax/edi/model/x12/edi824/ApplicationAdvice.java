@@ -3,7 +3,7 @@ package javax.edi.model.x12.edi824;
 import java.util.Collection;
 
 import javax.edi.bind.annotations.EDICollectionType;
-import javax.edi.model.x12.edi816.segment.OrgRelationshipsBody;
+import javax.edi.bind.annotations.EDISegmentGroup;
 import javax.edi.model.x12.edi824.segment.ApplicationAdviceBody;
 import javax.edi.model.x12.segment.GroupEnvelopeHeader;
 import javax.edi.model.x12.segment.GroupEnvelopeTrailer;
@@ -11,6 +11,7 @@ import javax.edi.model.x12.segment.InterchangeEnvelopeHeader;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+@EDISegmentGroup
 public class ApplicationAdvice {
 	
 	@NotNull

@@ -6,7 +6,7 @@ import javax.edi.bind.annotations.EDICollectionType;
 import javax.edi.bind.annotations.EDISegmentGroup;
 import javax.edi.model.x12.segment.NoteSpecialInstructions;
 import javax.edi.model.x12.segment.OriginalTransactionIdentification;
-import javax.edi.model.x12.segment.ReferenceIdentificationInvalidTxn;
+import javax.edi.model.x12.segment.ReferenceNumber;
 import javax.edi.model.x12.segment.TechnicalErrorDescription;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -17,13 +17,13 @@ public class ApplicationAdviceGroup {
 	@NotNull
 	private OriginalTransactionIdentification origTxnIdentification;
 	
-	@Size(max = 12)
-	@EDICollectionType(ReferenceIdentificationInvalidTxn.class)
-	private Collection<ReferenceIdentificationInvalidTxn> refIdentInvalidTxn;
+	@Size(min = 0, max = 12)
+	@EDICollectionType(ReferenceNumber.class)
+	private Collection<ReferenceNumber> refIdentInvalidTxn;
 	
 	private TechnicalErrorDescription techErrorDescription;
 	
-	@Size(max = 100)
+	@Size(min = 0, max = 100)
 	@EDICollectionType(NoteSpecialInstructions.class)
 	private NoteSpecialInstructions noteSpecialInstructions;
 
@@ -36,12 +36,12 @@ public class ApplicationAdviceGroup {
 		this.origTxnIdentification = origTxnIdentification;
 	}
 
-	public Collection<ReferenceIdentificationInvalidTxn> getRefIdentInvalidTxn() {
+	public Collection<ReferenceNumber> getRefIdentInvalidTxn() {
 		return refIdentInvalidTxn;
 	}
 
 	public void setRefIdentInvalidTxn(
-			Collection<ReferenceIdentificationInvalidTxn> refIdentInvalidTxn) {
+			Collection<ReferenceNumber> refIdentInvalidTxn) {
 		this.refIdentInvalidTxn = refIdentInvalidTxn;
 	}
 

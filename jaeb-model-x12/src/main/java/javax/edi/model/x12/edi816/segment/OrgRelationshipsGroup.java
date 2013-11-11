@@ -22,35 +22,51 @@ import javax.validation.constraints.Size;
 public class OrgRelationshipsGroup {
 	
 	@NotNull
-	private Name name;  // Party Ident.
-	
-	@Size(min=0, max=2)
-	@EDICollectionType(AddressInformation.class)
-	private Collection<AddressInformation> addrInfo;  // Party Location
-	
-	private GeographicLocation geoLocation;
-	private PersonContact contact;  // Admin. Comm. Contact
-	
-	@Size(min=0, max=10)
-	@EDICollectionType(DateTimeReference.class)
-	private Collection<DateTimeReference> date;
+	@Size(min = 1)
+	@EDICollectionType(HierarchicalLevel.class)
+	private Collection<HierarchicalLevel> level; 
 	
 	@NotNull
-	private HierarchicalLevel level;
+	@Size(min = 1)
+	@EDICollectionType(Name.class)
+	private Collection<Name> name;  // Party Ident.
 	
-	@Size(min=0, max=2)
+	@Size(min = 0)
 	@EDICollectionType(AdditionalNameInformation.class)
 	private Collection<AdditionalNameInformation> addlName;
 	
-	private Quantity quantity;
+	//@Size(min=0, max=2)
+	@Size(min=0)
+	@EDICollectionType(AddressInformation.class)
+	private Collection<AddressInformation> addrInfo;  // Party Location
 	
-	@Size(min=0, max=12)
+	@EDICollectionType(GeographicLocation.class)
+	@Size(min=0)
+	private Collection<GeographicLocation> geoLocation;
+	
+	@EDICollectionType(PersonContact.class)
+	@Size(min=0)
+	private Collection<PersonContact> contact;  // Admin. Comm. Contact
+	
+	@Size(min=0)
 	@EDICollectionType(ReferenceNumber.class)
 	private Collection<ReferenceNumber> refNum;
 	
-	private BaselineItemData actionInd;
+	@EDICollectionType(Quantity.class)
+	@Size(min=0)
+	private Quantity quantity;
+	
+	//@Size(min=0, max=10)
+	@Size(min=0)
+	@EDICollectionType(DateTimeReference.class)
+	private Collection<DateTimeReference> date;
+	
+	@EDICollectionType(BaselineItemData.class)
+	@Size(min=0)
+	private Collection<BaselineItemData> actionInd;
 	
 	@NotNull
+	@Size(min = 1, max = 1)
 	private TransactionSetTrailer transactionSetTrailer;
 
 	public TransactionSetTrailer getTransactionSetTrailer() {
@@ -67,10 +83,10 @@ public class OrgRelationshipsGroup {
 	public void setRefNum(Collection<ReferenceNumber> refNum) {
 		this.refNum = refNum;
 	}
-	public Name getName() {
+	public Collection<Name> getName() {
 		return name;
 	}
-	public void setName(Name name) {
+	public void setName(Collection<Name> name) {
 		this.name = name;
 	}
 	public Collection<AddressInformation> getAddrInfo() {
@@ -79,30 +95,25 @@ public class OrgRelationshipsGroup {
 	public void setAddrInfo(Collection<AddressInformation> addrInfo) {
 		this.addrInfo = addrInfo;
 	}
-	public GeographicLocation getGeoLocation() {
+	public Collection<GeographicLocation> getGeoLocation() {
 		return geoLocation;
 	}
-	public void setGeoLocation(GeographicLocation geoLocation) {
+	public void setGeoLocation(Collection<GeographicLocation> geoLocation) {
 		this.geoLocation = geoLocation;
 	}
-	public PersonContact getContact() {
-		return contact;
-	}
-	public void setContact(PersonContact contact) {
-		this.contact = contact;
-	}
+	
 	public Collection<DateTimeReference> getDate() {
 		return date;
 	}
 	public void setDate(Collection<DateTimeReference> date) {
 		this.date = date;
 	}
-	public HierarchicalLevel getLevel() {
+	/*public Collection<HierarchicalLevel> getLevel() {
 		return level;
 	}
-	public void setLevel(HierarchicalLevel level) {
+	public void setLevel(Collection<HierarchicalLevel> level) {
 		this.level = level;
-	}
+	}*/
 	public Collection<AdditionalNameInformation> getAddlName() {
 		return addlName;
 	}
@@ -115,11 +126,27 @@ public class OrgRelationshipsGroup {
 	public void setQuantity(Quantity quantity) {
 		this.quantity = quantity;
 	}
-	public BaselineItemData getActionInd() {
+	public Collection<BaselineItemData> getActionInd() {
 		return actionInd;
 	}
-	public void setActionInd(BaselineItemData actionInd) {
+	public void setActionInd(Collection<BaselineItemData> actionInd) {
 		this.actionInd = actionInd;
+	}
+
+	public Collection<PersonContact> getContact() {
+		return contact;
+	}
+
+	public void setContact(Collection<PersonContact> contact) {
+		this.contact = contact;
+	}
+
+	public Collection<HierarchicalLevel> getLevel() {
+		return level;
+	}
+
+	public void setLevel(Collection<HierarchicalLevel> level) {
+		this.level = level;
 	}
 
 	

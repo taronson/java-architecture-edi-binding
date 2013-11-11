@@ -24,29 +24,38 @@ public class Header {
 	@NotNull
 	private OrgRelationshipsBeginningSegment beginningSegment;
 	
-	@NotNull
-	private Name name;  // Party Ident.
-	
-	@EDICollectionType(AddressInformation.class)
-	@Size(min = 0, max = 2)
-	private Collection<AddressInformation> addrInfo;  // Party Location
-	
-	private GeographicLocation geoLocation;
-	
-	@EDICollectionType(PersonContact.class)
-	@Size(min = 0, max = 3)
-	private Collection<PersonContact> contact;  // Admin. Comm. Contact
-	
 	@EDICollectionType(DateTimeReference.class)
 	@Size(min = 0, max = 10)
 	private Collection<DateTimeReference> date;
 	
-	@EDICollectionType(AdditionalNameInformation.class)
-	@Size(min = 0, max = 2)
-	private Collection<AdditionalNameInformation >addlName;
-	
 	@EDICollectionType(ReferenceNumber.class)
-	@Size(min = 1, max = 12)
+	@Size(min = 0, max = 12)
+	private Collection<ReferenceNumber> refNum1;
+	
+	@NotNull
+	@Size(min = 1)
+	@EDICollectionType(Name.class)
+	private Collection<Name> name;  // Party Ident.
+	
+	@Size(min=0)
+	@EDICollectionType(AdditionalNameInformation.class)
+	private Collection<AdditionalNameInformation> addlName;
+	
+	//@Size(min=0, max=2)
+	@Size(min=0)
+	@EDICollectionType(AddressInformation.class)
+	private Collection<AddressInformation> addrInfo;  // Party Location
+	
+	@EDICollectionType(GeographicLocation.class)
+	@Size(min=0)
+	private Collection<GeographicLocation> geoLocation;
+	
+	@EDICollectionType(PersonContact.class)
+	@Size(min=0)
+	private Collection<PersonContact> contact;  // Admin. Comm. Contact
+	
+	@Size(min=0)
+	@EDICollectionType(ReferenceNumber.class)
 	private Collection<ReferenceNumber> refNum;
 
 	public TransactionSetHeader getTransactionSetHeader() {
@@ -66,12 +75,36 @@ public class Header {
 		this.beginningSegment = beginningSegment;
 	}
 
-	public Name getName() {
+	public Collection<DateTimeReference> getDate() {
+		return date;
+	}
+
+	public void setDate(Collection<DateTimeReference> date) {
+		this.date = date;
+	}
+
+	public Collection<ReferenceNumber> getRefNum1() {
+		return refNum1;
+	}
+
+	public void setRefNum1(Collection<ReferenceNumber> refNum1) {
+		this.refNum1 = refNum1;
+	}
+
+	public Collection<Name> getName() {
 		return name;
 	}
 
-	public void setName(Name name) {
+	public void setName(Collection<Name> name) {
 		this.name = name;
+	}
+
+	public Collection<AdditionalNameInformation> getAddlName() {
+		return addlName;
+	}
+
+	public void setAddlName(Collection<AdditionalNameInformation> addlName) {
+		this.addlName = addlName;
 	}
 
 	public Collection<AddressInformation> getAddrInfo() {
@@ -82,11 +115,11 @@ public class Header {
 		this.addrInfo = addrInfo;
 	}
 
-	public GeographicLocation getGeoLocation() {
+	public Collection<GeographicLocation> getGeoLocation() {
 		return geoLocation;
 	}
 
-	public void setGeoLocation(GeographicLocation geoLocation) {
+	public void setGeoLocation(Collection<GeographicLocation> geoLocation) {
 		this.geoLocation = geoLocation;
 	}
 
@@ -96,22 +129,6 @@ public class Header {
 
 	public void setContact(Collection<PersonContact> contact) {
 		this.contact = contact;
-	}
-
-	public Collection<DateTimeReference> getDate() {
-		return date;
-	}
-
-	public void setDate(Collection<DateTimeReference> date) {
-		this.date = date;
-	}
-
-	public Collection<AdditionalNameInformation> getAddlName() {
-		return addlName;
-	}
-
-	public void setAddlName(Collection<AdditionalNameInformation> addlName) {
-		this.addlName = addlName;
 	}
 
 	public Collection<ReferenceNumber> getRefNum() {
@@ -125,11 +142,13 @@ public class Header {
 	@Override
 	public String toString() {
 		return "Header [transactionSetHeader=" + transactionSetHeader
-				+ ", beginningSegment=" + beginningSegment + ", name=" + name
-				+ ", addrInfo=" + addrInfo + ", geoLocation=" + geoLocation
-				+ ", contact=" + contact + ", date=" + date + ", addlName="
-				+ addlName + ", refNum=" + refNum + "]";
+				+ ", beginningSegment=" + beginningSegment + ", date=" + date
+				+ ", refNum1=" + refNum1 + ", name=" + name + ", addlName="
+				+ addlName + ", addrInfo=" + addrInfo + ", geoLocation="
+				+ geoLocation + ", contact=" + contact + ", refNum=" + refNum
+				+ "]";
 	}
+	
 	
 	
 }

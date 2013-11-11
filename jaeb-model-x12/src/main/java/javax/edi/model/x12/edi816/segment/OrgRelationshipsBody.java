@@ -1,6 +1,7 @@
 package javax.edi.model.x12.edi816.segment;
 
 import javax.edi.bind.annotations.EDISegmentGroup;
+import javax.edi.model.x12.segment.TransactionSetTrailer;
 import javax.validation.constraints.NotNull;
 
 @EDISegmentGroup
@@ -12,9 +13,9 @@ public class OrgRelationshipsBody {
 		@NotNull
 		private Detail detail;
 		
-		/*@NotNull
+		@NotNull
 		private Trailer trailer; 
-*/
+		
 		public Header getHeader() {
 			return header;
 		}
@@ -31,17 +32,17 @@ public class OrgRelationshipsBody {
 			this.detail = detail;
 		}
 		
-		/*public Trailer getTrailer() {
+		public Trailer getTrailer() {
 			return trailer;
 		}
 
 		public void setTrailer(Trailer trailer) {
 			this.trailer = trailer;
-		}*/
+		}
 		
 		@Override
 		public String toString() {
-			return "OrgRelationsBody [header=" + header + ", detail=" + detail
-					+ ", trailer= (in detail)" ;
+			return "OrgRelationsBody [header =" + header + ", detail =" + detail
+					+ ", trailer = " + trailer ;
 		}
 }

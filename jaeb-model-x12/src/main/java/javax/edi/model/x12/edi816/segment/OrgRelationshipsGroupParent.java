@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @EDISegmentGroup
-public class OrgRelationshipsGroup {
+public class OrgRelationshipsGroupParent {
 	
 	@NotNull
 	@Size(min = 1)
@@ -22,8 +22,8 @@ public class OrgRelationshipsGroup {
 	
 	@Size(min=1)
 	@NotNull
-	@EDICollectionType(OrgRelationshipsGroup.class)
-	private Collection<OrgRelationshipsGroup> orgRel;
+	@EDICollectionType(OrgRelationshipsGroupChild.class)
+	private Collection<OrgRelationshipsGroupChild> orgRelChild;
 
 	public HierarchicalLevel getLevel() {
 		return level;
@@ -42,13 +42,16 @@ public class OrgRelationshipsGroup {
 		this.orgRelationshipsIdentificationGroup = orgRelationshipsIdentificationGroup;
 	}
 
-	public Collection<OrgRelationshipsGroup> getOrgRel() {
-		return orgRel;
+	public Collection<OrgRelationshipsGroupChild> getOrgRelChild() {
+		return orgRelChild;
 	}
 
-	public void setOrgRel(Collection<OrgRelationshipsGroup> orgRel) {
-		this.orgRel = orgRel;
+	public void setOrgRelChild(Collection<OrgRelationshipsGroupChild> orgRelChild) {
+		this.orgRelChild = orgRelChild;
 	}
+
+
+
 	
 	
 	

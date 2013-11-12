@@ -1,6 +1,5 @@
 package javax.edi.model.x12.edi816;
 
-import java.io.Serializable;
 import java.util.Collection;
 
 import javax.edi.bind.annotations.EDICollectionType;
@@ -10,15 +9,11 @@ import javax.edi.model.x12.segment.GroupEnvelopeHeader;
 import javax.edi.model.x12.segment.GroupEnvelopeTrailer;
 import javax.edi.model.x12.segment.InterchangeEnvelopeHeader;
 import javax.edi.model.x12.segment.InterchangeEnvelopeTrailer;
-import javax.edi.model.x12.segment.TransactionSetTrailer;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @EDIMessage
-public class OrgRelationships implements Serializable {
-
-	
-		private static final long serialVersionUID = 9011695524190818456L;
+public class OrgRelationships {
 
 		@NotNull
 		private InterchangeEnvelopeHeader envelopeHeader;

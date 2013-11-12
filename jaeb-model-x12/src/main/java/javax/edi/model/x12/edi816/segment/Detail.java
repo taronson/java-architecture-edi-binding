@@ -20,8 +20,11 @@ public class Detail {
 	public Collection<OrgRelationshipsGroup> getOrgRel() {
 		return orgRel;
 	}
-	
+
 	public void setOrgRel(Collection<OrgRelationshipsGroup> orgRel) {
 		this.orgRel = orgRel;
 	}
+	
+
+
 }

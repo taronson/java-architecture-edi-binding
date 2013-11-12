@@ -8,6 +8,17 @@ import javax.validation.constraints.Size;
 @EDISegmentGroup
 public class Trailer {
 
+	@NotNull
+	private TransactionSetTrailer transactionSetTrailer;
+
+	public TransactionSetTrailer getTransactionSetTrailer() {
+		return transactionSetTrailer;
+	}
+
+	public void setTransactionSetTrailer(TransactionSetTrailer transactionSetTrailer) {
+		this.transactionSetTrailer = transactionSetTrailer;
+	}
+	
 	
 		
 }

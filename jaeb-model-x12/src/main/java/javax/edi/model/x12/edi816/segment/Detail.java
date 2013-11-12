@@ -4,8 +4,6 @@ import java.util.Collection;
 
 import javax.edi.bind.annotations.EDICollectionType;
 import javax.edi.bind.annotations.EDISegmentGroup;
-import javax.edi.model.x12.segment.HierarchicalLevel;
-import javax.edi.model.x12.segment.TransactionSetTrailer;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -14,14 +12,17 @@ public class Detail {
 	
 	@Size(min=1)
 	@NotNull
-	@EDICollectionType(OrgRelationshipsGroup.class)
-	private Collection<OrgRelationshipsGroup> orgRel;
+	@EDICollectionType(OrgRelationshipsGroupParent.class)
+	private Collection<OrgRelationshipsGroupParent> orgRel;
 
-	public Collection<OrgRelationshipsGroup> getOrgRel() {
+	public Collection<OrgRelationshipsGroupParent> getOrgRel() {
 		return orgRel;
 	}
-	
-	public void setOrgRel(Collection<OrgRelationshipsGroup> orgRel) {
+
+	public void setOrgRel(Collection<OrgRelationshipsGroupParent> orgRel) {
 		this.orgRel = orgRel;
 	}
+	
+
+
 }

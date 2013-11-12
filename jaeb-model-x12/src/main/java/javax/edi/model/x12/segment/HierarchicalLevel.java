@@ -14,6 +14,9 @@ public class HierarchicalLevel {
 
 	@EDIElement(fieldName="HL03")
 	private String hierarchicalLevelCode;
+	
+	@EDIElement(fieldName="HL04")
+	private String hierarchicalChildCode;
 
 	public String getHierarchicalIDNumber() {
 		return hierarchicalIDNumber;
@@ -37,6 +40,14 @@ public class HierarchicalLevel {
 
 	public void setHierarchicalLevelCode(String hierarchicalLevelCode) {
 		this.hierarchicalLevelCode = hierarchicalLevelCode;
+	}
+
+	public String getHierarchicalChildCode() {
+		return hierarchicalChildCode;
+	}
+
+	public void setHierarchicalChildCode(String hierarchicalChildCode) {
+		this.hierarchicalChildCode = hierarchicalChildCode;
 	}
 
 	

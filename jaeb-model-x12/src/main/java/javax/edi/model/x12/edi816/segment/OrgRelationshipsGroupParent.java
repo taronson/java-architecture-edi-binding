@@ -3,19 +3,13 @@ package javax.edi.model.x12.edi816.segment;
 import java.util.Collection;
 
 import javax.edi.bind.annotations.EDICollectionType;
-<<<<<<< HEAD
-=======
 import javax.edi.bind.annotations.EDISegmentGroup;
->>>>>>> 82bf0b410ffadef60ba28960e9bcb18f9c50a158
 import javax.edi.model.x12.segment.HierarchicalLevel;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-<<<<<<< HEAD
-=======
 @EDISegmentGroup
->>>>>>> 82bf0b410ffadef60ba28960e9bcb18f9c50a158
-public class OrgRelationshipsGroupChild {
+public class OrgRelationshipsGroupParent {
 	
 	@NotNull
 	@Size(min = 1)
@@ -25,7 +19,11 @@ public class OrgRelationshipsGroupChild {
 	@Size(min = 1)
 	@EDICollectionType(OrgRelationshipsIdentificationGroup.class)
 	private Collection<OrgRelationshipsIdentificationGroup> orgRelationshipsIdentificationGroup;
-
+	
+	@Size(min=1)
+	@NotNull
+	@EDICollectionType(OrgRelationshipsGroupChild.class)
+	private Collection<OrgRelationshipsGroupChild> orgRelChild;
 
 	public HierarchicalLevel getLevel() {
 		return level;
@@ -44,11 +42,17 @@ public class OrgRelationshipsGroupChild {
 		this.orgRelationshipsIdentificationGroup = orgRelationshipsIdentificationGroup;
 	}
 
+	public Collection<OrgRelationshipsGroupChild> getOrgRelChild() {
+		return orgRelChild;
+	}
+
+	public void setOrgRelChild(Collection<OrgRelationshipsGroupChild> orgRelChild) {
+		this.orgRelChild = orgRelChild;
+	}
+
+
+
 	
 	
 	
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 82bf0b410ffadef60ba28960e9bcb18f9c50a158

@@ -14,6 +14,7 @@ import javax.validation.constraints.NotNull;
 @EDISegmentGroup
 public class OrgRelationshipsIdentificationGroup {
 	@NotNull
+<<<<<<< HEAD
 	private Name name; // Party Ident.
 
 	private AdditionalNameInformation addlName;
@@ -30,6 +31,24 @@ public class OrgRelationshipsIdentificationGroup {
 
 	private DateTimeReference date;
 
+=======
+	private Name name;  // Party Ident.
+	
+	private AdditionalNameInformation addlName;
+	
+	private AddressInformation addrInfo;  // Party Location
+	
+	private GeographicLocation geoLocation;
+	
+	private PersonContact contact;  // Admin. Comm. Contact
+	
+	private ReferenceNumber refNum1;
+	
+	private ReferenceNumber refNum2;
+	
+	private DateTimeReference date;
+	
+>>>>>>> 82bf0b410ffadef60ba28960e9bcb18f9c50a158
 	private ActionIndicator actionIndicator;
 
 	public Name getName() {
@@ -103,5 +122,12 @@ public class OrgRelationshipsIdentificationGroup {
 	public void setActionIndicator(ActionIndicator actionIndicator) {
 		this.actionIndicator = actionIndicator;
 	}
+<<<<<<< HEAD
 
 }
+=======
+	
+	
+	
+}
+>>>>>>> 82bf0b410ffadef60ba28960e9bcb18f9c50a158

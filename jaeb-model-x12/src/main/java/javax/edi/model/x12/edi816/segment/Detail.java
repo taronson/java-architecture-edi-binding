@@ -12,9 +12,10 @@ public class Detail {
 	
 	@Size(min=1)
 	@NotNull
-	@EDICollectionType(OrgRelationshipsGroup.class)
-	private Collection<OrgRelationshipsGroup> orgRel;
+	@EDICollectionType(OrgRelationshipsGroupParent.class)
+	private Collection<OrgRelationshipsGroupParent> orgRel;
 
+<<<<<<< HEAD
 	public Collection<OrgRelationshipsGroup> getorgRel() {
 		return orgRel;
 	}
@@ -25,4 +26,16 @@ public class Detail {
 	}
 
 	
+=======
+	public Collection<OrgRelationshipsGroupParent> getOrgRel() {
+		return orgRel;
+	}
+
+	public void setOrgRel(Collection<OrgRelationshipsGroupParent> orgRel) {
+		this.orgRel = orgRel;
+	}
+	
+
+
+>>>>>>> 82bf0b410ffadef60ba28960e9bcb18f9c50a158
 }

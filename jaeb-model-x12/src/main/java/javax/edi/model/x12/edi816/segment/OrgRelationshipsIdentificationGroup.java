@@ -13,121 +13,99 @@ import javax.validation.constraints.NotNull;
 
 @EDISegmentGroup
 public class OrgRelationshipsIdentificationGroup {
-	@NotNull
-<<<<<<< HEAD
-	private Name name; // Party Ident.
+        @NotNull
+        private Name name; // Party Ident.
+        
+        private AdditionalNameInformation addlName;
+        
+        private AddressInformation addrInfo; // Party Location
+        
+        private GeographicLocation geoLocation;
+        
+        private PersonContact contact; // Admin. Comm. Contact
+        
+        private ReferenceNumber refNum1;
+        
+        private ReferenceNumber refNum2;
+        
+        private DateTimeReference date;
+        
+        private ActionIndicator actionIndicator;
 
-	private AdditionalNameInformation addlName;
+        public Name getName() {
+                return name;
+        }
 
-	private AddressInformation addrInfo; // Party Location
+        public void setName(Name name) {
+                this.name = name;
+        }
 
-	private GeographicLocation geoLocation;
+        public AdditionalNameInformation getAddlName() {
+                return addlName;
+        }
 
-	private PersonContact contact; // Admin. Comm. Contact
+        public void setAddlName(AdditionalNameInformation addlName) {
+                this.addlName = addlName;
+        }
 
-	private ReferenceNumber refNum1;
+        public AddressInformation getAddrInfo() {
+                return addrInfo;
+        }
 
-	private ReferenceNumber refNum2;
+        public void setAddrInfo(AddressInformation addrInfo) {
+                this.addrInfo = addrInfo;
+        }
 
-	private DateTimeReference date;
+        public GeographicLocation getGeoLocation() {
+                return geoLocation;
+        }
 
-=======
-	private Name name;  // Party Ident.
-	
-	private AdditionalNameInformation addlName;
-	
-	private AddressInformation addrInfo;  // Party Location
-	
-	private GeographicLocation geoLocation;
-	
-	private PersonContact contact;  // Admin. Comm. Contact
-	
-	private ReferenceNumber refNum1;
-	
-	private ReferenceNumber refNum2;
-	
-	private DateTimeReference date;
-	
->>>>>>> 82bf0b410ffadef60ba28960e9bcb18f9c50a158
-	private ActionIndicator actionIndicator;
+        public void setGeoLocation(GeographicLocation geoLocation) {
+                this.geoLocation = geoLocation;
+        }
 
-	public Name getName() {
-		return name;
-	}
+        public PersonContact getContact() {
+                return contact;
+        }
 
-	public void setName(Name name) {
-		this.name = name;
-	}
+        public void setContact(PersonContact contact) {
+                this.contact = contact;
+        }
 
-	public AdditionalNameInformation getAddlName() {
-		return addlName;
-	}
+        public ReferenceNumber getRefNum1() {
+                return refNum1;
+        }
 
-	public void setAddlName(AdditionalNameInformation addlName) {
-		this.addlName = addlName;
-	}
+        public void setRefNum1(ReferenceNumber refNum1) {
+                this.refNum1 = refNum1;
+        }
 
-	public AddressInformation getAddrInfo() {
-		return addrInfo;
-	}
+        public ReferenceNumber getRefNum2() {
+                return refNum2;
+        }
 
-	public void setAddrInfo(AddressInformation addrInfo) {
-		this.addrInfo = addrInfo;
-	}
+        public void setRefNum2(ReferenceNumber refNum2) {
+                this.refNum2 = refNum2;
+        }
 
-	public GeographicLocation getGeoLocation() {
-		return geoLocation;
-	}
+        public DateTimeReference getDate() {
+                return date;
+        }
 
-	public void setGeoLocation(GeographicLocation geoLocation) {
-		this.geoLocation = geoLocation;
-	}
+        public void setDate(DateTimeReference date) {
+                this.date = date;
+        }
 
-	public PersonContact getContact() {
-		return contact;
-	}
+        public ActionIndicator getActionIndicator() {
+                return actionIndicator;
+        }
 
-	public void setContact(PersonContact contact) {
-		this.contact = contact;
-	}
-
-	public ReferenceNumber getRefNum1() {
-		return refNum1;
-	}
-
-	public void setRefNum1(ReferenceNumber refNum1) {
-		this.refNum1 = refNum1;
-	}
-
-	public ReferenceNumber getRefNum2() {
-		return refNum2;
-	}
-
-	public void setRefNum2(ReferenceNumber refNum2) {
-		this.refNum2 = refNum2;
-	}
-
-	public DateTimeReference getDate() {
-		return date;
-	}
-
-	public void setDate(DateTimeReference date) {
-		this.date = date;
-	}
-
-	public ActionIndicator getActionIndicator() {
-		return actionIndicator;
-	}
-
-	public void setActionIndicator(ActionIndicator actionIndicator) {
-		this.actionIndicator = actionIndicator;
-	}
-<<<<<<< HEAD
-
+        public void setActionIndicator(ActionIndicator actionIndicator) {
+                this.actionIndicator = actionIndicator;
+        }
+        
+        
+        
 }
-=======
-	
-	
-	
-}
->>>>>>> 82bf0b410ffadef60ba28960e9bcb18f9c50a158
+
+    

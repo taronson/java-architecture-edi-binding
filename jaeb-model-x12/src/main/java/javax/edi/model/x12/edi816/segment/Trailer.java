@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 public class Trailer {
 
 	@NotNull
-<<<<<<< HEAD
+
     private TransactionSetTrailer transactionSetTrailer;
 
     public TransactionSetTrailer getTransactionSetTrailer() {
@@ -18,18 +18,6 @@ public class Trailer {
     public void setTransactionSetTrailer(TransactionSetTrailer transactionSetTrailer) {
             this.transactionSetTrailer = transactionSetTrailer;
     }
-=======
-	private TransactionSetTrailer transactionSetTrailer;
 
-	public TransactionSetTrailer getTransactionSetTrailer() {
-		return transactionSetTrailer;
-	}
-
-	public void setTransactionSetTrailer(TransactionSetTrailer transactionSetTrailer) {
-		this.transactionSetTrailer = transactionSetTrailer;
-	}
-	
-	
->>>>>>> 82bf0b410ffadef60ba28960e9bcb18f9c50a158
 		
 }

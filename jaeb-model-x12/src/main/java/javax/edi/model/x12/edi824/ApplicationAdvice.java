@@ -3,15 +3,17 @@ package javax.edi.model.x12.edi824;
 import java.util.Collection;
 
 import javax.edi.bind.annotations.EDICollectionType;
+import javax.edi.bind.annotations.EDIMessage;
 import javax.edi.bind.annotations.EDISegmentGroup;
 import javax.edi.model.x12.edi824.segment.ApplicationAdviceBody;
 import javax.edi.model.x12.segment.GroupEnvelopeHeader;
 import javax.edi.model.x12.segment.GroupEnvelopeTrailer;
 import javax.edi.model.x12.segment.InterchangeEnvelopeHeader;
+import javax.edi.model.x12.segment.InterchangeEnvelopeTrailer;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@EDISegmentGroup
+@EDIMessage
 public class ApplicationAdvice {
 	
 	@NotNull
@@ -27,6 +29,22 @@ public class ApplicationAdvice {
 	
 	@NotNull
 	private GroupEnvelopeTrailer groupEnvelopeTrailer;
+	
+	@NotNull
+	private InterchangeEnvelopeTrailer envelopeTrailer;
+	
+	public Collection<ApplicationAdviceBody> getBody() {
+		return body;
+	}
+
+	public void setBody(Collection<ApplicationAdviceBody> body) {
+		this.body = body;
+	}
+	
+	@Override
+	public String toString() {
+		return  " body = ["	+ body + "]";
+	}
 
 	public InterchangeEnvelopeHeader getEnvelopeHeader() {
 		return envelopeHeader;
@@ -44,14 +62,6 @@ public class ApplicationAdvice {
 		this.groupEnvelopeHeader = groupEnvelopeHeader;
 	}
 
-	public Collection<ApplicationAdviceBody> getBody() {
-		return body;
-	}
-
-	public void setBody(Collection<ApplicationAdviceBody> body) {
-		this.body = body;
-	}
-
 	public GroupEnvelopeTrailer getGroupEnvelopeTrailer() {
 		return groupEnvelopeTrailer;
 	}
@@ -60,11 +70,13 @@ public class ApplicationAdvice {
 		this.groupEnvelopeTrailer = groupEnvelopeTrailer;
 	}
 
-	@Override
-	public String toString() {
-		return "ApplicationAdvice [envelopeHeader=" + envelopeHeader
-				+ ", groupEnvelopeHeader=" + groupEnvelopeHeader + ", body="
-				+ body + ", groupEnvelopeTrailer=" + groupEnvelopeTrailer + "]";
+	public InterchangeEnvelopeTrailer getEnvelopeTrailer() {
+		return envelopeTrailer;
 	}
 
+	public void setEnvelopeTrailer(InterchangeEnvelopeTrailer envelopeTrailer) {
+		this.envelopeTrailer = envelopeTrailer;
+	}
+
+	
 }

@@ -8,30 +8,30 @@ import javax.validation.constraints.Size;
 @EDISegment(tag="OTI")
 public class OriginalTransactionIdentification {
 	
-	@EDIElement(fieldName="OT101", dataElement="110")
+	@EDIElement(fieldName="OTI01", dataElement="110")
 	@Size(min=1, max=2)
 	@NotNull
 	private String appAckCode;
 	
-	@EDIElement(fieldName="OT102", dataElement="128")
+	@EDIElement(fieldName="OTI02", dataElement="128")
 	@Size(min=2, max=3)
 	@NotNull
 	private String refIdentificationQualifier;
 	
-	@EDIElement(fieldName="OT103", dataElement="127")
+	@EDIElement(fieldName="OTI03", dataElement="127")
 	@Size(min=1, max=30)
 	@NotNull
 	private String refIdentification;
 	
-	@EDIElement(fieldName="OT104", dataElement="142")
+	@EDIElement(fieldName="OTI04", dataElement="142")
 	@Size(min=2, max=15)
 	private String appSenderCode;
 	
-	@EDIElement(fieldName="OT108", dataElement="28")
+	@EDIElement(fieldName="OTI08", dataElement="28")
 	@Size(min=1, max=9)
 	private String groupControlNumber;
 	
-	@EDIElement(fieldName="OT110", dataElement="143")
+	@EDIElement(fieldName="OTI10", dataElement="143")
 	@Size(min=3, max=3)
 	private String txnSetIdentifierCode;
 

@@ -12,14 +12,14 @@ public class Detail {
 	
 	@Size(min=1)
 	@NotNull
-	@EDICollectionType(ApplicationAdviceGroup.class)
-	private Collection<ApplicationAdviceGroup> appAdvice;
+	@EDICollectionType(ApplicationAdviceGroupParent.class)
+	private Collection<ApplicationAdviceGroupParent> appAdvice;
 
-	public Collection<ApplicationAdviceGroup> getAppAdvice() {
+	public Collection<ApplicationAdviceGroupParent> getAppAdvice() {
 		return appAdvice;
 	}
 
-	public void setAppAdvice(Collection<ApplicationAdviceGroup> appAdvice) {
+	public void setAppAdvice(Collection<ApplicationAdviceGroupParent> appAdvice) {
 		this.appAdvice = appAdvice;
 	}
 

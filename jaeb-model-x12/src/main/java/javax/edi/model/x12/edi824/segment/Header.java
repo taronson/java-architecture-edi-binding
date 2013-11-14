@@ -16,33 +16,18 @@ import javax.validation.constraints.Size;
 	public class Header {
 		
 		@NotNull
-		private InterchangeEnvelopeHeader interchangeEnvelopeHeader;
-
-		@NotNull
 		private TransactionSetHeader transactionSetHeader;
-		
-		@NotNull
-		private GroupEnvelopeHeader functionalGroupHeader;
-		
+				
 		@NotNull
 		private ApplicationAdviceBeginningSegment appAdviceBeginSegment;
 		
-		@NotNull
+		
 		private Name name;  // Party Ident.
 		
 		@NotNull
-		@Size(max = 12)
+		@Size(min = 1)
 		@EDICollectionType(ReferenceNumber.class)
 		private Collection<ReferenceNumber> refIdentificationInvalidTxns;
-
-		public InterchangeEnvelopeHeader getInterchangeEnvelopeHeader() {
-			return interchangeEnvelopeHeader;
-		}
-
-		public void setInterchangeEnvelopeHeader(
-				InterchangeEnvelopeHeader interchangeEnvelopeHeader) {
-			this.interchangeEnvelopeHeader = interchangeEnvelopeHeader;
-		}
 
 		public TransactionSetHeader getTransactionSetHeader() {
 			return transactionSetHeader;
@@ -50,14 +35,6 @@ import javax.validation.constraints.Size;
 
 		public void setTransactionSetHeader(TransactionSetHeader transactionSetHeader) {
 			this.transactionSetHeader = transactionSetHeader;
-		}
-
-		public GroupEnvelopeHeader getFunctionalGroupHeader() {
-			return functionalGroupHeader;
-		}
-
-		public void setFunctionalGroupHeader(GroupEnvelopeHeader functionalGroupHeader) {
-			this.functionalGroupHeader = functionalGroupHeader;
 		}
 
 		public ApplicationAdviceBeginningSegment getAppAdviceBeginSegment() {
@@ -85,4 +62,14 @@ import javax.validation.constraints.Size;
 				Collection<ReferenceNumber> refIdentificationInvalidTxns) {
 			this.refIdentificationInvalidTxns = refIdentificationInvalidTxns;
 		}
+
+		public Collection<ReferenceNumber> getRefIdentificationInvalidTxns() {
+			return refIdentificationInvalidTxns;
+		}
+
+		public void setRefIdentificationInvalidTxns(
+				Collection<ReferenceNumber> refIdentificationInvalidTxns) {
+			this.refIdentificationInvalidTxns = refIdentificationInvalidTxns;
+		}
+		
 }

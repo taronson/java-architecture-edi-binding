@@ -12,12 +12,6 @@ public class Trailer {
 	@NotNull
 	private TransactionSetTrailer transactionSetTrailer;
 	
-	@NotNull
-	private GroupEnvelopeTrailer functionalGroupTrailer;
-	
-	@NotNull
-	private InterchangeEnvelopeTrailer interChangeControlTrailer;
-
 	public TransactionSetTrailer getTransactionSetTrailer() {
 		return transactionSetTrailer;
 	}
@@ -26,22 +20,5 @@ public class Trailer {
 		this.transactionSetTrailer = transactionSetTrailer;
 	}
 
-	public GroupEnvelopeTrailer getFunctionalGroupTrailer() {
-		return functionalGroupTrailer;
-	}
-
-	public void setFunctionalGroupTrailer(
-			GroupEnvelopeTrailer functionalGroupTrailer) {
-		this.functionalGroupTrailer = functionalGroupTrailer;
-	}
-
-	public InterchangeEnvelopeTrailer getInterChangeControlTrailer() {
-		return interChangeControlTrailer;
-	}
-
-	public void setInterChangeControlTrailer(
-			InterchangeEnvelopeTrailer interChangeControlTrailer) {
-		this.interChangeControlTrailer = interChangeControlTrailer;
-	}
-
+	
 }
